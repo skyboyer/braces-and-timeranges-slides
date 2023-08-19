@@ -9,15 +9,93 @@
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black.css">
-
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<section>
+						<h1>Braces check</h1>
+						<div class="fragment">Given: string of "(" and ")"</div>
+						<div class="fragment">Task: check correctness</div>
+					</section>
+					<section>
+						<h1>Examples</h1>
+						<div class="fragment">()<div>
+						<div class="fragment" style="color: green">Correct!</div>
+					</section>
+					<section>
+						<h1>Examples</h1>
+						<div class="fragment">())<div>
+						<div class="fragment" style="color: red">Incorrect!</div>
+					</section>
+					<section>
+						<h1>Examples</h1>
+						<div class="fragment">((()()())))</div>
+						<div class="fragment" style="height: 40vh"><img src="dist/assets/exploding-head.svg" /></div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Let's calculate!</h1>
+						<div class="fragment">Each "(" becomes "+1"</div>
+						<div class="fragment">Each ")" becomes "-1"</div>
+					</section>
+					<section>
+						<table style="text-align: center;">
+							<thead>
+								<tr>
+									<th></th>
+									<th>(</th>
+									<th>(</th>
+									<th>(</th>
+									<th>)</th>
+									<th>(</th>
+									<th>)</th>
+									<th>(</th>
+									<th>)</th>
+									<th>)</th>
+									<th>)</th>
+									<th>)</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="fragment" data-fragment-index="1">
+									<td></td>
+									<td class="fragment" data-fragment-index="1">+1</td>
+									<td class="fragment" data-fragment-index="2">+1</td>
+									<td class="fragment" data-fragment-index="3">+1</td>
+									<td class="fragment" data-fragment-index="4">-1</td>
+									<td class="fragment" data-fragment-index="3">+1</td>
+									<td class="fragment" data-fragment-index="4">-1</td>
+									<td class="fragment" data-fragment-index="3">+1</td>
+									<td class="fragment" data-fragment-index="4">-1</td>
+									<td class="fragment" data-fragment-index="4">-1</td>
+									<td class="fragment" data-fragment-index="4">-1</td>
+									<td class="fragment" data-fragment-index="4">-1</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class="fragment" data-fragment-index="5">0</td>
+									<td class="fragment" data-fragment-index="6">1</td>
+									<td class="fragment" data-fragment-index="7">2</td>
+									<td class="fragment" data-fragment-index="8">3</td>
+									<td class="fragment" data-fragment-index="9">2</td>
+									<td class="fragment" data-fragment-index="10">3</td>
+									<td class="fragment" data-fragment-index="11">2</td>
+									<td class="fragment" data-fragment-index="12">3</td>
+									<td class="fragment" data-fragment-index="12">2</td>
+									<td class="fragment" data-fragment-index="12">1</td>
+									<td class="fragment" data-fragment-index="13">0</td>
+									<td class="fragment" data-fragment-index="14" style="font-size: 200%; color: red">-1</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
 			</div>
 		</div>
 

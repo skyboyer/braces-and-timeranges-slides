@@ -262,11 +262,16 @@ gulp.task('eslint', () => gulp.src(['./js/**', 'gulpfile.js'])
         .pipe(eslint())
         .pipe(eslint.format()))
 
+gulp.task('copy-assets', function() {
+    return gulp.src('./public/assets/*.*')
+        .pipe(gulp.dest('./dist/assets'));
+});        
+
 gulp.task('test', gulp.series( 'eslint', 'qunit' ))
 
 gulp.task('default', gulp.series(gulp.parallel('js', 'css', 'plugins'), 'test'))
 
-gulp.task('build', gulp.parallel('js', 'css', 'plugins'))
+gulp.task('build', gulp.parallel('js', 'css', 'plugins', 'copy-assets'))
 
 gulp.task('package', gulp.series(() =>
 
@@ -319,5 +324,7 @@ gulp.task('serve', () => {
     ], gulp.series('css-core', 'reload'))
 
     gulp.watch(['test/*.html'], gulp.series('test'))
+
+    gulp.watch(['public/assets/*.*'], gulp.series('copy-assets'))
 
 })

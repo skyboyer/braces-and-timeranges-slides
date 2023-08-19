@@ -329,3 +329,18 @@
         background-color: var(--r-background-color);
     }
 }
+
+
+/*********************************************
+ * CUSTOM OVERRIDES
+ ********************************************/
+ body {
+	.reveal {
+		table {
+			th, td {
+				text-align: center;
+				vertical-align: middle;
+			}
+		}
+	}
+ }
