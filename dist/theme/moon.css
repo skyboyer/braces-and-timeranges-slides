@@ -363,3 +363,10 @@ section.has-light-background, section.has-light-background h1, section.has-light
     background-color: var(--r-background-color);
   }
 }
+/*********************************************
+ * CUSTOM OVERRIDES
+ ********************************************/
+body .reveal table th, body .reveal table td {
+  text-align: center;
+  vertical-align: middle;
+}

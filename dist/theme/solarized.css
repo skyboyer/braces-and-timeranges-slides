@@ -359,3 +359,10 @@ html * {
     background-color: var(--r-background-color);
   }
 }
+/*********************************************
+ * CUSTOM OVERRIDES
+ ********************************************/
+body .reveal table th, body .reveal table td {
+  text-align: center;
+  vertical-align: middle;
+}
