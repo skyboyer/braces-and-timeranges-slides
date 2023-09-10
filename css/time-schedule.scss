@@ -1,0 +1,189 @@
+/*
+inspired by https://css-tricks.com/building-a-conference-schedule-with-css-grid/
+powered by SASS loops/iterations
+ykozlov
+*/
+
+$allGroups: (
+    "group1": ("bgColor": #AA0000, "border": #FF00FF, "text": #FFFFFF), 
+    "group2": ("bgColor": #00AA00, "border": #0000FF, "text": #FFFFAA), 
+    "group3": ("bgColor": #0000AA, "border": "organge", "text": #FFFFFF), 
+);
+$startHours: 7;
+$endHours: 19;
+$calendarBg: #FFFFAA;
+$calendarUnavailbleBg: #AAAAAA;
+$rulerTextColor: #555;
+
+.timeline {
+    display: grid;
+    background-color: $calendarBg;
+    height: calc(100vh - 300px);
+    overflow: hidden;
+    font-size: 1vh;
+    $template_rows: null;
+    [data-start-time], [data-end-time] {
+        display: none; // to be overriden only for events which are in "view zone" between $startTime and $endTime
+    }
+
+    @for $hour from $startHours to $endHours {
+        $string: '';
+        $hour_str: $hour +"";
+
+        @if $hour < 10 {
+            $hour_str: "0"+$hour_str
+        }
+
+        @for $minute_index from 0 to 4 {
+            $minute: $minute_index * 15;
+            $minute_str: $minute +"";
+
+            @if $minute_index ==0 {
+                $minute_str: "00";
+            }
+
+            $string: "[time-" + $hour_str + $minute_str + "] 1fr ";
+            $template_rows: $template_rows + $string;
+        }
+    }
+
+    grid-template-rows: unquote($template_rows);
+
+    $template_columns: "[ruler] 5em ";
+
+    @each $groupName, $groupConfig in $allGroups {
+        $template_columns: $template_columns +" ["+$groupName +"] 1fr";
+    }
+
+    grid-template-columns: unquote($template_columns);
+
+
+    @for $hour from $startHours to $endHours {
+        $string: '';
+        $hour_str: $hour +"";
+
+        @if $hour < 10 {
+            $hour_str: "0"+$hour_str
+        }
+
+        @for $minute_index from 0 to 4 {
+            $minute: $minute_index * 15;
+            $minute_str: $minute +"";
+
+            @if $minute_index ==0 {
+                $minute_str: "00";
+            }
+
+            [data-start-time="#{$hour_str}#{$minute_str}"] {
+                grid-row-start: unquote("time-" + $hour_str + $minute_str);
+                display: block;
+            }
+
+            [data-end-time="#{$hour_str}#{$minute_str}"] {
+                grid-row-end: unquote("time-" + $hour_str + $minute_str);
+                display: block;
+            }
+
+            .just-start[data-start-time="#{$hour_str}#{$minute_str}"] {
+                grid-row-end: unquote("time-" + $hour_str + $minute_str);
+            }
+
+            .just-end[data-end-time="#{$hour_str}#{$minute_str}"] {
+                $target_hour_str: $hour_str;
+                $target_minute_str: $minute_str;
+                @if $minute_index< 1 {
+                    @if $hour< 11 {
+                        $target_hour_str: "0" + ($hour - 1);
+                    }
+                    @else {
+                        $target_hour_str: ($hour - 1) + "";
+                    }
+                    $target_minute_str: "45";
+                }
+                @else {
+                    $target_minute_str: ($minute_index - 1) * 15 + "";
+                }
+                grid-row-start: unquote("time-" + $target_hour_str + $target_minute_str);
+            }
+
+        }
+    }
+
+    .event {
+        background-color: map-get(map-get($allGroups, "group1"), "bgColor");
+        color: map-get(map-get($allGroups, "group1"), "text");
+        border-color: map-get(map-get($allGroups, "group1"), "border");
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        grid-column: group1;
+        padding: 0;
+        min-height: 0;
+
+        &::after {
+            display: block;
+            content: attr(data-start-time) "/" attr(data-end-time);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        &.just-start, &.just-end {
+            overflow: visible;
+            border-left: none;
+            border-right: none;
+            background-color: transparent;
+        }
+
+        &.just-start[data-start-time] {
+            border-top: 1px solid green;
+            border-bottom: none;
+
+            &::after {
+                background-color: rgba(127, 127, 127, 127);
+                content: attr(data-start-time);
+            }
+        }
+
+        &.just-end[data-end-time] {
+            border-bottom: 1px solid red;
+            border-top: none;
+
+            &::after {
+                background-color: rgba(127, 127, 127, 127);
+                content: attr(data-end-time);
+            }
+        }
+    }
+
+    @each $groupName, $groupConfig in $allGroups {
+        .event[data-group=#{$groupName}] {
+            grid-column: #{$groupName};
+            background-color: map-get($groupConfig, "bgColor");
+            color: map-get($groupConfig, "text");
+            border-color: map-get($groupConfig , "border");
+        }
+    }
+
+    .ruler {
+        display: contents;
+        color: $rulerTextColor;
+        & > div:nth-of-type(2n+1) {
+            border-top: 1px solid $rulerTextColor;
+            grid-column-start: ruler;
+            grid-column-end: -1;
+
+            &:before {
+                content: attr(data-start-time);
+                grid-column-start: ruler;
+                grid-column-end: ruler;
+                display: flex;
+                width: 5em;
+                text-align: right;
+            }
+    
+        }
+    }
+}
