@@ -12,10 +12,18 @@ function generateRuler() {
 
 function generateEvents(events) {
     return events.map(
-        ({ from, to, id, group = 'group1', justStart = false, justEnd = false }, index) => 
+        ({ from, to, id, group = 'group1', justStart = false, justEnd = false, className, label }, index) => 
             `<div class="${
-                ['event', justStart && 'just-start', justEnd && 'just-end'].filter(x => x).join(' ')
-            }"${ id ? ` data-id="${id}"` : '' } data-group="${group}" data-start-time="${from}" data-end-time="${to}"></div>`
+                ['event', justStart && 'just-start', justEnd && 'just-end', className].filter(x => x).join(' ')
+            }"${ 
+                id ? ` data-id="${id}"` : '' 
+            } data-group="${group}"${
+                from ? ` data-start-time="${from}"` : ''
+            }${
+                to ? ` data-end-time="${to}"`: ''
+            }${
+                label ? ` data-label="${label}"`: ''
+            }></div>`
     ).join("\n");
 }
 
@@ -26,6 +34,36 @@ function generateCalendar(events) {
     </div>`
 }
 
-console.log(generateEvents([
-    { from: '0800', to: '2000' }
-]))
+function splitToEdges(events, options = {}) {
+    const { braces } = options;
+    return events.flatMap(({ from, to, ...data }) => [
+        { from, justStart: true, ...data, label: braces ? '(' : '' },
+        { to, justEnd: true, ...data, label: braces ? ')' : '' },
+    ]);
+}
+
+function setGroup(events, targetGroup) {
+    return events.map(({ group, ...data }) => ({ ...data, group: targetGroup }))
+}
+
+function setClass(events, className) {
+    return events.map((event) => ({ ...event, className }));
+}
+
+const sourceEvents = [
+    { from: '0800', to: '1030', id: 'event-1', group: 'group1' },
+    { from: '0900', to: '0930', id: 'event-2', group: 'group2' },
+    { from: '0930', to: '1100', id: 'event-3', group: 'group3' },
+    { from: '1030', to: '1200', id: 'event-4', group: 'group2' }
+];
+
+console.log(
+    generateEvents(
+        splitToEdges(
+            setClass(
+                setGroup(sourceEvents, 'group1')
+            ),
+            { braces: true }
+        )
+    )
+)
