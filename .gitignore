@@ -7,6 +7,6 @@ out/
 .svn
 log/*.log
 tmp/**
-dist/*
+dist/
 node_modules/
 .sass-cache
