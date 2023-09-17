@@ -19,6 +19,7 @@
 					<section>
 						<h1>How to deal with time ranges with ease</h1>
 						<h3>...and how parentheses balance check could help us</h3>
+						<aside class="notes">Hello everybody. My name is Yevhen, I'm frontend developer and for last 5 years have been working exclusively with React. However, things I want to share have nothing to do with specific framework or even progamming language.</aside>
 					</section>
 					<section>
 						<div class="timeline">
@@ -29,9 +30,9 @@
 							<div class="event" data-group="group1" data-start-time="1000" data-end-time="1130"></div>
 							<div class="event" data-group="group1" data-start-time="1200" data-end-time="1400"></div>
 							<div class="contents fragment">
-								<div class="event" data-group="group1" data-start-time="0830" data-end-time="0930"></div>
-								<div class="event" data-group="group1" data-start-time="0945" data-end-time="1030"></div>
-								<div class="event" data-group="group1" data-start-time="1200" data-end-time="1330"></div>
+								<div class="event" data-group="group2" data-start-time="0830" data-end-time="0930"></div>
+								<div class="event" data-group="group2" data-start-time="0945" data-end-time="1030"></div>
+								<div class="event" data-group="group2" data-start-time="1200" data-end-time="1330"></div>
 								<div class="event" data-group="group3" data-start-time="1000" data-end-time="1100"></div>
 								<div class="event" data-group="group3" data-start-time="1200" data-end-time="1330"></div>
 							</div>
@@ -129,7 +130,7 @@
 						</table>
 					</section>
 				</section>
-				<section data-auto-animate>
+				<section>
 					<section>
 						<h1>Fitting</h1>
 						<h3>2hr appointment to place</h3>
@@ -155,17 +156,17 @@
 							<div class="event" data-id="event-2" data-group="group1" data-start-time="1000" data-end-time="1130"></div>
 							<div class="event" data-id="event-3" data-group="group1" data-start-time="1530" data-end-time="1530"></div>
 							<div class="fragment contents">
-								<div class="event just-start" data-group="group1" data-start-time="1000"></div>
-								<div class="event just-start" data-group="group1" data-start-time="1030"></div>
-								<div class="event just-start" data-group="group1" data-start-time="1100"></div>
-								<div class="event just-start" data-group="group1" data-start-time="1130"></div>
-								<div class="event just-start" data-group="group1" data-start-time="1530"></div>
+								<div class="event just-start" data-group="group2" data-start-time="1000"></div>
+								<div class="event just-start" data-group="group2" data-start-time="1030"></div>
+								<div class="event just-start" data-group="group2" data-start-time="1100"></div>
+								<div class="event just-start" data-group="group2" data-start-time="1130"></div>
+								<div class="event just-start" data-group="group2" data-start-time="1530"></div>
 							</div>
 						</div>
 						<aside class="notes">This way we are switching from "placing an event" to "placing a start point of the event". Then we can iterate over result and every point is valid place to start our 2hr event.</aside>
 					</section>
 				</section>
-				<section data-auto-animate>
+				<section>
 					<section>
 						<h1>Merging</h1>
 						<aside class="notes">Let's go to the more complex stuff. Say, we have a set of events. Some are overlapping in time.</aside>
@@ -175,16 +176,17 @@
 							<div class="ruler">
 								<div data-start-time="0000"></div><div data-start-time="0015"></div><div data-start-time="0030"></div><div data-start-time="0045"></div><div data-start-time="0100"></div><div data-start-time="0115"></div><div data-start-time="0130"></div><div data-start-time="0145"></div><div data-start-time="0200"></div><div data-start-time="0215"></div><div data-start-time="0230"></div><div data-start-time="0245"></div><div data-start-time="0300"></div><div data-start-time="0315"></div><div data-start-time="0330"></div><div data-start-time="0345"></div><div data-start-time="0400"></div><div data-start-time="0415"></div><div data-start-time="0430"></div><div data-start-time="0445"></div><div data-start-time="0500"></div><div data-start-time="0515"></div><div data-start-time="0530"></div><div data-start-time="0545"></div><div data-start-time="0600"></div><div data-start-time="0615"></div><div data-start-time="0630"></div><div data-start-time="0645"></div><div data-start-time="0700"></div><div data-start-time="0715"></div><div data-start-time="0730"></div><div data-start-time="0745"></div><div data-start-time="0800"></div><div data-start-time="0815"></div><div data-start-time="0830"></div><div data-start-time="0845"></div><div data-start-time="0900"></div><div data-start-time="0915"></div><div data-start-time="0930"></div><div data-start-time="0945"></div><div data-start-time="1000"></div><div data-start-time="1015"></div><div data-start-time="1030"></div><div data-start-time="1045"></div><div data-start-time="1100"></div><div data-start-time="1115"></div><div data-start-time="1130"></div><div data-start-time="1145"></div><div data-start-time="1200"></div><div data-start-time="1215"></div><div data-start-time="1230"></div><div data-start-time="1245"></div><div data-start-time="1300"></div><div data-start-time="1315"></div><div data-start-time="1330"></div><div data-start-time="1345"></div><div data-start-time="1400"></div><div data-start-time="1415"></div><div data-start-time="1430"></div><div data-start-time="1445"></div><div data-start-time="1500"></div><div data-start-time="1515"></div><div data-start-time="1530"></div><div data-start-time="1545"></div><div data-start-time="1600"></div><div data-start-time="1615"></div><div data-start-time="1630"></div><div data-start-time="1645"></div><div data-start-time="1700"></div><div data-start-time="1715"></div><div data-start-time="1730"></div><div data-start-time="1745"></div><div data-start-time="1800"></div><div data-start-time="1815"></div><div data-start-time="1830"></div><div data-start-time="1845"></div><div data-start-time="1900"></div><div data-start-time="1915"></div><div data-start-time="1930"></div><div data-start-time="1945"></div><div data-start-time="2000"></div><div data-start-time="2015"></div><div data-start-time="2030"></div><div data-start-time="2045"></div><div data-start-time="2100"></div><div data-start-time="2115"></div><div data-start-time="2130"></div><div data-start-time="2145"></div><div data-start-time="2200"></div><div data-start-time="2215"></div><div data-start-time="2230"></div><div data-start-time="2245"></div><div data-start-time="2300"></div><div data-start-time="2315"></div><div data-start-time="2330"></div><div data-start-time="2345"></div>
 							</div>
-							<div class="fragment fade-out contents">
+							<div class="contents">
 								<div class="event" data-id="event-1" data-group="group1" data-start-time="0800" data-end-time="1030"></div>
 								<div class="event" data-id="event-2" data-group="group2" data-start-time="0900" data-end-time="0930"></div>
-								<div class="event" data-id="event-3" data-group="group3" data-start-time="0930" data-end-time="1100"></div>
-								<div class="event" data-id="event-4" data-group="group1" data-start-time="1030" data-end-time="1200"></div>
+								<div class="event" data-id="event-3" data-group="group3" data-start-time="0930" data-end-time="1000"></div>
+								<div class="event" data-id="event-5" data-group="group3" data-start-time="1130" data-end-time="1230"></div>
+								<div class="event" data-id="event-4" data-group="group1" data-start-time="1100" data-end-time="1200"></div>
 							</div>
 						</div>
 						<aside class="notes">let's move all the events to the same line</aside>
 					</section>
-					<section data-auto-animate>
+					<section data-auto-animate="">
 						<div class="timeline">
 							<div class="ruler">
 								<div data-start-time="0000"></div><div data-start-time="0015"></div><div data-start-time="0030"></div><div data-start-time="0045"></div><div data-start-time="0100"></div><div data-start-time="0115"></div><div data-start-time="0130"></div><div data-start-time="0145"></div><div data-start-time="0200"></div><div data-start-time="0215"></div><div data-start-time="0230"></div><div data-start-time="0245"></div><div data-start-time="0300"></div><div data-start-time="0315"></div><div data-start-time="0330"></div><div data-start-time="0345"></div><div data-start-time="0400"></div><div data-start-time="0415"></div><div data-start-time="0430"></div><div data-start-time="0445"></div><div data-start-time="0500"></div><div data-start-time="0515"></div><div data-start-time="0530"></div><div data-start-time="0545"></div><div data-start-time="0600"></div><div data-start-time="0615"></div><div data-start-time="0630"></div><div data-start-time="0645"></div><div data-start-time="0700"></div><div data-start-time="0715"></div><div data-start-time="0730"></div><div data-start-time="0745"></div><div data-start-time="0800"></div><div data-start-time="0815"></div><div data-start-time="0830"></div><div data-start-time="0845"></div><div data-start-time="0900"></div><div data-start-time="0915"></div><div data-start-time="0930"></div><div data-start-time="0945"></div><div data-start-time="1000"></div><div data-start-time="1015"></div><div data-start-time="1030"></div><div data-start-time="1045"></div><div data-start-time="1100"></div><div data-start-time="1115"></div><div data-start-time="1130"></div><div data-start-time="1145"></div><div data-start-time="1200"></div><div data-start-time="1215"></div><div data-start-time="1230"></div><div data-start-time="1245"></div><div data-start-time="1300"></div><div data-start-time="1315"></div><div data-start-time="1330"></div><div data-start-time="1345"></div><div data-start-time="1400"></div><div data-start-time="1415"></div><div data-start-time="1430"></div><div data-start-time="1445"></div><div data-start-time="1500"></div><div data-start-time="1515"></div><div data-start-time="1530"></div><div data-start-time="1545"></div><div data-start-time="1600"></div><div data-start-time="1615"></div><div data-start-time="1630"></div><div data-start-time="1645"></div><div data-start-time="1700"></div><div data-start-time="1715"></div><div data-start-time="1730"></div><div data-start-time="1745"></div><div data-start-time="1800"></div><div data-start-time="1815"></div><div data-start-time="1830"></div><div data-start-time="1845"></div><div data-start-time="1900"></div><div data-start-time="1915"></div><div data-start-time="1930"></div><div data-start-time="1945"></div><div data-start-time="2000"></div><div data-start-time="2015"></div><div data-start-time="2030"></div><div data-start-time="2045"></div><div data-start-time="2100"></div><div data-start-time="2115"></div><div data-start-time="2130"></div><div data-start-time="2145"></div><div data-start-time="2200"></div><div data-start-time="2215"></div><div data-start-time="2230"></div><div data-start-time="2245"></div><div data-start-time="2300"></div><div data-start-time="2315"></div><div data-start-time="2330"></div><div data-start-time="2345"></div>
@@ -195,9 +197,11 @@
 								<div class="event just-start" data-id="event-2-start" data-group="group1" data-start-time="0900"></div>
 								<div class="event just-end" data-id="event-2-end" data-group="group1" data-end-time="0930"></div>
 								<div class="event just-start" data-id="event-3-start" data-group="group1" data-start-time="0930"></div>
-								<div class="event just-end" data-id="event-3-end" data-group="group1" data-end-time="1100"></div>
-								<div class="event just-start" data-id="event-4-start" data-group="group1" data-start-time="1030"></div>
-								<div class="event just-end" data-id="event-4-start" data-group="group1" data-end-time="1200"></div>
+								<div class="event just-end" data-id="event-3-end" data-group="group1" data-end-time="1000"></div>
+								<div class="event just-start" data-id="event-4-start" data-group="group1" data-start-time="1100"></div>
+								<div class="event just-end" data-id="event-4-start" data-group="group1" data-end-time="1230"></div>
+								<div class="event just-start" data-id="event-5-start" data-group="group1" data-start-time="1130"></div>
+								<div class="event just-end" data-id="event-5-start" data-group="group1" data-end-time="1230"></div>
 							</div>
 						</div>
 						<aside class="notes">Next we split every event to "start point" and "end point" and move them to the same column.</aside>
@@ -208,31 +212,34 @@
 								<div data-start-time="0000"></div><div data-start-time="0015"></div><div data-start-time="0030"></div><div data-start-time="0045"></div><div data-start-time="0100"></div><div data-start-time="0115"></div><div data-start-time="0130"></div><div data-start-time="0145"></div><div data-start-time="0200"></div><div data-start-time="0215"></div><div data-start-time="0230"></div><div data-start-time="0245"></div><div data-start-time="0300"></div><div data-start-time="0315"></div><div data-start-time="0330"></div><div data-start-time="0345"></div><div data-start-time="0400"></div><div data-start-time="0415"></div><div data-start-time="0430"></div><div data-start-time="0445"></div><div data-start-time="0500"></div><div data-start-time="0515"></div><div data-start-time="0530"></div><div data-start-time="0545"></div><div data-start-time="0600"></div><div data-start-time="0615"></div><div data-start-time="0630"></div><div data-start-time="0645"></div><div data-start-time="0700"></div><div data-start-time="0715"></div><div data-start-time="0730"></div><div data-start-time="0745"></div><div data-start-time="0800"></div><div data-start-time="0815"></div><div data-start-time="0830"></div><div data-start-time="0845"></div><div data-start-time="0900"></div><div data-start-time="0915"></div><div data-start-time="0930"></div><div data-start-time="0945"></div><div data-start-time="1000"></div><div data-start-time="1015"></div><div data-start-time="1030"></div><div data-start-time="1045"></div><div data-start-time="1100"></div><div data-start-time="1115"></div><div data-start-time="1130"></div><div data-start-time="1145"></div><div data-start-time="1200"></div><div data-start-time="1215"></div><div data-start-time="1230"></div><div data-start-time="1245"></div><div data-start-time="1300"></div><div data-start-time="1315"></div><div data-start-time="1330"></div><div data-start-time="1345"></div><div data-start-time="1400"></div><div data-start-time="1415"></div><div data-start-time="1430"></div><div data-start-time="1445"></div><div data-start-time="1500"></div><div data-start-time="1515"></div><div data-start-time="1530"></div><div data-start-time="1545"></div><div data-start-time="1600"></div><div data-start-time="1615"></div><div data-start-time="1630"></div><div data-start-time="1645"></div><div data-start-time="1700"></div><div data-start-time="1715"></div><div data-start-time="1730"></div><div data-start-time="1745"></div><div data-start-time="1800"></div><div data-start-time="1815"></div><div data-start-time="1830"></div><div data-start-time="1845"></div><div data-start-time="1900"></div><div data-start-time="1915"></div><div data-start-time="1930"></div><div data-start-time="1945"></div><div data-start-time="2000"></div><div data-start-time="2015"></div><div data-start-time="2030"></div><div data-start-time="2045"></div><div data-start-time="2100"></div><div data-start-time="2115"></div><div data-start-time="2130"></div><div data-start-time="2145"></div><div data-start-time="2200"></div><div data-start-time="2215"></div><div data-start-time="2230"></div><div data-start-time="2245"></div><div data-start-time="2300"></div><div data-start-time="2315"></div><div data-start-time="2330"></div><div data-start-time="2345"></div>
 							</div>
 							<div class="contents">
-								<div class="event just-start" data-id="event-1-start" data-group="group1" data-label="(" data-start-time="0800"></div>
-								<div class="event just-end" data-id="event-1-end" data-group="group1" data-label=")" data-end-time="1030"></div>
-								<div class="event just-start" data-id="event-2-start" data-group="group1" data-label="(" data-start-time="0900"></div>
-								<div class="event just-end" data-id="event-2-end" data-group="group1" data-label=")" data-end-time="0930"></div>
-								<div class="event just-start" data-id="event-3-start" data-group="group1" data-label="(" data-start-time="0930"></div>
-								<div class="event just-end" data-id="event-3-end" data-group="group1" data-label=")" data-end-time="1100"></div>
-								<div class="event just-start" data-id="event-4-start" data-group="group1" data-label="(" data-start-time="1030"></div>
-								<div class="event just-end" data-id="event-4-start" data-group="group1" data-label=")" data-end-time="1200"></div>
+								<div class="event just-start" data-id="event-1-start" data-group="group1" data-start-time="0800" data-label="( &rarr; +1"></div>
+								<div class="event just-start" data-id="event-2-start" data-group="group1" data-start-time="0900" data-label="(  &rarr; +1"></div>
+								<div class="event just-end" data-id="event-2-end" data-group="group1" data-end-time="0930" data-label=")  &rarr; -1"></div>
+								<div class="event just-start" data-id="event-3-start" data-group="group1" data-start-time="0930" data-label="(  &rarr; +1"></div>
+								<div class="event just-end" data-id="event-3-end" data-group="group1" data-end-time="1000" data-label=")  &rarr; -1"></div>
+								<div class="event just-end" data-id="event-1-end" data-group="group1" data-end-time="1030" data-label=") &rarr; -1"></div>
+								<div class="event just-start" data-id="event-4-start" data-group="group1" data-start-time="1100" data-label="(  &rarr; +1"></div>
+								<div class="event just-start" data-id="event-5-start" data-group="group1" data-start-time="1130" data-label="(  &rarr; +1"></div>
+								<div class="event just-end" data-id="event-4-start" data-group="group1" data-end-time="1230" data-label=") x 2  &rarr; -2"></div>
 							</div>
-							<div class="event fragment just-start" data-label="0800-... // 1" data-id="result" data-group="group1" data-start-time="0800"></div>
-							<div class="event fragment" data-id="result" data-label="0800-... // 2" data-group="group1" data-start-time="0800" data-end-time="0900"></div>
-							<div class="event fragment" data-id="result" data-label="0800-... // 1" data-group="group1" data-start-time="0800" data-end-time="0930"></div>
-							<div class="event fragment" data-id="result" data-label="0800-... // 2" data-group="group1" data-start-time="0800" data-end-time="0930"></div>
-							<div class="event fragment" data-id="result" data-label="0800-... // 1" data-group="group1" data-start-time="0800" data-end-time="1030"></div>
-							<div class="event fragment" data-id="result" data-label="0800-... // 2" data-group="group1" data-start-time="0800" data-end-time="1030"></div>
-							<div class="event fragment" data-id="result" data-label="0800-... // 1" data-group="group1" data-start-time="0800" data-end-time="1100"></div>
-							<div class="event fragment" data-id="result" data-label="0800-1200 // 0" data-group="group1" data-start-time="0800" data-end-time="1200"></div>
+							<div class="event fragment just-start" data-label="0800-... // 1" data-id="result" data-group="group2" data-start-time="0800"></div>
+							<div class="event fragment" data-id="result" data-label="0800-... // 2" data-group="group2" data-start-time="0800" data-end-time="0900"></div>
+							<div class="event fragment" data-id="result" data-label="0800-... // 1" data-group="group2" data-start-time="0800" data-end-time="0930"></div>
+							<div class="event fragment" data-id="result" data-label="0800-... // 2" data-group="group2" data-start-time="0800" data-end-time="0930"></div>
+							<div class="event fragment" data-id="result" data-label="0800-... // 1" data-group="group2" data-start-time="0800" data-end-time="1000"></div>
+							<div class="event fragment" data-id="result" data-label="0800-1030 // 0" data-group="group2" data-start-time="0800" data-end-time="1030"></div>
+							<div class="event fragment just-start" data-id="result2" data-label="1100-... // 1" data-group="group2" data-start-time="1100"></div>
+							<div class="event fragment" data-id="result2" data-label="1100-... // 2" data-group="group2" data-start-time="1100" data-end-time="1130"></div>
+							<div class="event fragment" data-id="result2" data-label="1100-... // 1" data-group="group2" data-start-time="1100" data-end-time="1230"></div>
+							<div class="event fragment" data-id="result2" data-label="1100-1230 // 0" data-group="group2" data-start-time="1100" data-end-time="1230"></div>
 						</div>
 						<aside class="notes">You know what? Let's think about them as "opening brace" and "closing brace". Then we could apply the same logic as we did with parentheses check. This time we don't need to verify validity, but instead when "sum" switches from 0 we remember this as a "start" point for merged interval. And ...</aside>
 					</section>
 					<section>
-						<p>Depending on conditions we may not calc</p>
+						<p>Depending on requirements threshold might be 0 or some positive number(e.g. "no more than 5 ranges at any moment of time").</p>
 					</section>
 				</section>	
-				<section data-auto-animate>
+				<section>
 					<section>
 						<h1>Inversion</h1>
 						<aside class="notes">Suppose we have a set of ranges when a doctor is busy. And we need to get ranges when they are available. Let's talk about "inverting" time ranges.</aside>
@@ -270,12 +277,12 @@
 								<div class="event just-start" data-id="global-start" data-group="group1" data-start-time="0700"></div>
 								<div class="event just-end" data-id="global-end" data-group="group1" data-end-time="1500"></div>
 							</div>
-							<div class="event fragment just-start" data-label="0700-... // 1" data-id="result1" data-group="group3" data-start-time="0700"></div>
-							<div class="event fragment" data-id="result1" data-label="0700-... // 0" data-group="group3" data-start-time="0700" data-end-time="0800"></div>
-							<div class="event fragment just-start" data-label="0930-... // 1" data-id="result2" data-group="group3" data-start-time="0930"></div>
-							<div class="event fragment" data-id="result2" data-label="0930-1100 // 0" data-group="group3" data-start-time="0930" data-end-time="1100"></div>
-							<div class="event fragment just-start" data-label="1230-... // 1" data-id="result3" data-group="group3" data-start-time="1230"></div>
-							<div class="event fragment" data-id="result3" data-label="1230-1800 // 0" data-group="group3" data-start-time="1230" data-end-time="1500"></div>
+							<div class="event fragment just-start" data-label="0700-... // 1" data-id="result1" data-group="group2" data-start-time="0700"></div>
+							<div class="event fragment" data-id="result1" data-label="0700-... // 0" data-group="group2" data-start-time="0700" data-end-time="0800"></div>
+							<div class="event fragment just-start" data-label="0930-... // 1" data-id="result2" data-group="group2" data-start-time="0930"></div>
+							<div class="event fragment" data-id="result2" data-label="0930-1100 // 0" data-group="group2" data-start-time="0930" data-end-time="1100"></div>
+							<div class="event fragment just-start" data-label="1230-... // 1" data-id="result3" data-group="group2" data-start-time="1230"></div>
+							<div class="event fragment" data-id="result3" data-label="1230-1800 // 0" data-group="group2" data-start-time="1230" data-end-time="1500"></div>
 						</div>
 						<aside class="notes">
 							Then we swap type: end point becomes start and vise versa. After it we add out global start at 0700 and end at 1500.
@@ -366,8 +373,8 @@
 							<div class="event just-end" data-id="range1-1-end" data-group="group1" data-end-time="1200" data-label=") x 2"></div>
 							<div class="event just-end" data-id="range3-1-end" data-group="group1" data-end-time="1300" data-label=")"></div>
 							<div class="contents">
-								<div class="event just-start fragment" data-id="result" data-group="group1" data-start-time="1100" data-label="1100-... // 3"></div>
-								<div class="event fragment" data-id="result" data-group="group1" data-start-time="1100" data-end-time="1200" data-label="1100-1200"></div>
+								<div class="event just-start fragment" data-id="result" data-group="group2" data-start-time="1100" data-label="1100-... // 3"></div>
+								<div class="event fragment" data-id="result" data-group="group2" data-start-time="1100" data-end-time="1200" data-label="1100-1200"></div>
 							</div>	
 						</div>
 						<aside class="notes">
@@ -415,10 +422,10 @@
 									<div data-start-time="0000"></div><div data-start-time="0015"></div><div data-start-time="0030"></div><div data-start-time="0045"></div><div data-start-time="0100"></div><div data-start-time="0115"></div><div data-start-time="0130"></div><div data-start-time="0145"></div><div data-start-time="0200"></div><div data-start-time="0215"></div><div data-start-time="0230"></div><div data-start-time="0245"></div><div data-start-time="0300"></div><div data-start-time="0315"></div><div data-start-time="0330"></div><div data-start-time="0345"></div><div data-start-time="0400"></div><div data-start-time="0415"></div><div data-start-time="0430"></div><div data-start-time="0445"></div><div data-start-time="0500"></div><div data-start-time="0515"></div><div data-start-time="0530"></div><div data-start-time="0545"></div><div data-start-time="0600"></div><div data-start-time="0615"></div><div data-start-time="0630"></div><div data-start-time="0645"></div><div data-start-time="0700"></div><div data-start-time="0715"></div><div data-start-time="0730"></div><div data-start-time="0745"></div><div data-start-time="0800"></div><div data-start-time="0815"></div><div data-start-time="0830"></div><div data-start-time="0845"></div><div data-start-time="0900"></div><div data-start-time="0915"></div><div data-start-time="0930"></div><div data-start-time="0945"></div><div data-start-time="1000"></div><div data-start-time="1015"></div><div data-start-time="1030"></div><div data-start-time="1045"></div><div data-start-time="1100"></div><div data-start-time="1115"></div><div data-start-time="1130"></div><div data-start-time="1145"></div><div data-start-time="1200"></div><div data-start-time="1215"></div><div data-start-time="1230"></div><div data-start-time="1245"></div><div data-start-time="1300"></div><div data-start-time="1315"></div><div data-start-time="1330"></div><div data-start-time="1345"></div><div data-start-time="1400"></div><div data-start-time="1415"></div><div data-start-time="1430"></div><div data-start-time="1445"></div><div data-start-time="1500"></div><div data-start-time="1515"></div><div data-start-time="1530"></div><div data-start-time="1545"></div><div data-start-time="1600"></div><div data-start-time="1615"></div><div data-start-time="1630"></div><div data-start-time="1645"></div><div data-start-time="1700"></div><div data-start-time="1715"></div><div data-start-time="1730"></div><div data-start-time="1745"></div><div data-start-time="1800"></div><div data-start-time="1815"></div><div data-start-time="1830"></div><div data-start-time="1845"></div><div data-start-time="1900"></div><div data-start-time="1915"></div><div data-start-time="1930"></div><div data-start-time="1945"></div><div data-start-time="2000"></div><div data-start-time="2015"></div><div data-start-time="2030"></div><div data-start-time="2045"></div><div data-start-time="2100"></div><div data-start-time="2115"></div><div data-start-time="2130"></div><div data-start-time="2145"></div><div data-start-time="2200"></div><div data-start-time="2215"></div><div data-start-time="2230"></div><div data-start-time="2245"></div><div data-start-time="2300"></div><div data-start-time="2315"></div><div data-start-time="2330"></div><div data-start-time="2345"></div>
 								</div>
 								<div class="event" data-id="range1-1" data-group="group1" data-start-time="0900" data-end-time="1300"></div>
-								<div class="event" data-id="range2-1" data-group="group1" data-start-time="0900" data-end-time="1030"></div>
-								<div class="event" data-id="range2-2" data-group="group1" data-start-time="1200" data-end-time="1500"></div>
+								<div class="event" data-id="range2-1" data-group="group2" data-start-time="0900" data-end-time="1030"></div>
+								<div class="event" data-id="range2-2" data-group="group2" data-start-time="1200" data-end-time="1500"></div>
 								<div class="event" data-id="range3-1" data-group="group3" data-start-time="1200" data-end-time="1800"></div>
-							</div>
+								</div>
 						</div>
 						<aside class="notes">
 							<span style="color: grey">press SPACE, explain what's going on</span>
