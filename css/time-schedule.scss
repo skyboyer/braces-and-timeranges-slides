@@ -220,3 +220,14 @@ $edgeOnlyBorderWidth: 5px;
     background-color: rgba(30, 30, 30, 0.75);
     padding: 1em;
 }
+
+section:has(>section>section)::after {
+    content: "Only 2 level of nesting is supported";
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: red;
+    background-color: white;
+    border: 1px solid red;
+    z-index: 999;
+}
