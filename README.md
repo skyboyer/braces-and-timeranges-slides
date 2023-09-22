@@ -1,3 +1,12 @@
+<h1>To run the slides</h1>
+
+<ol>
+<li>`npm run build`</li>
+<li>`npm run start`</li>
+<li>open URL you will get in command line</li>
+<li>press "S" to see Presented View with presenter notes<li>
+</ol>
+
 <p align="center">
   <a href="https://revealjs.com">
   <img src="https://hakim-static.s3.amazonaws.com/reveal-js/logo/v1/reveal-black-text-sticker.png" alt="reveal.js" width="500">
